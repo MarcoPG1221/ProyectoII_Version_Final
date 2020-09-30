@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="340.0" prefWidth="713.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AplicacionController">
+   <children>
+      <MenuBar layoutY="-2.0" prefHeight="25.0" prefWidth="725.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Opciones">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#showInicio" text="Regresar al Inicio" />
+              <MenuItem mnemonicParsing="false" onAction="#RegistroDeClientes" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#showProducto" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#showComprar" text="Comprar" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Reportes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#showMostrarClientes" text="Clientes" />
+                  <MenuItem mnemonicParsing="false" onAction="#showReporteProducto" text="Productos" />
+                  <MenuItem mnemonicParsing="false" onAction="#showOrdenCompra" text="Orden de Compra" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      
+      <Pane fx:id="PaneCliente" layoutX="6.0" layoutY="45.0" prefHeight="371.0" prefWidth="713.0" visible="false">
+          <children>
+            <Label layoutX="27.0" layoutY="14.0" prefHeight="27.0" prefWidth="313.0" text="Seleccione Tipo de Cliente a Registrar:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="406.0" layoutY="58.0" prefHeight="27.0" prefWidth="96.0" text="Empresa">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="98.0" text="Nombres:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="140.0" text="Apellidos:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="178.0" text="Dirección:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="25.0" layoutY="220.0" prefHeight="20.0" prefWidth="25.0" text="DPI:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtNombreIndividual" layoutX="111.0" layoutY="96.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtApellidoIndividual" layoutX="111.0" layoutY="138.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtDireccionIndividual" layoutX="111.0" layoutY="176.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtDpiIndividual" layoutX="111.0" layoutY="218.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtContactoEmpresa" layoutX="492.0" layoutY="218.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtDireccionEmpresa" layoutX="492.0" layoutY="176.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtApellidoEmpresa" layoutX="492.0" layoutY="138.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtNombreEmpresa" layoutX="492.0" layoutY="96.0" prefHeight="25.0" prefWidth="192.0" />
+            <Label layoutX="406.0" layoutY="220.0" prefHeight="20.0" prefWidth="61.0" text="Contacto:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="406.0" layoutY="178.0" text="Dirección:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="406.0" layoutY="140.0" text="Apellidos:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="406.0" layoutY="98.0" text="Nombres:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAltasEmpresa" layoutX="492.0" layoutY="262.0" mnemonicParsing="false" onAction="#AltasEmpresa" prefHeight="30.0" prefWidth="60.0" text="Altas" />
+            <Button fx:id="btnBajasEmpresa" layoutX="559.0" layoutY="262.0" mnemonicParsing="false" onAction="#BajasEmpresa" prefHeight="30.0" prefWidth="60.0" text="Bajas" />
+            <Button fx:id="btnCambioEmpresa" layoutX="627.0" layoutY="262.0" mnemonicParsing="false" onAction="#CambioEmpresa" prefHeight="30.0" prefWidth="60.0" text="Cambio" />
+            <Button fx:id="btnCambioIndividual" layoutX="245.0" layoutY="262.0" mnemonicParsing="false" onAction="#CambioIndividual" prefHeight="30.0" prefWidth="60.0" text="Cambio" />
+            <Button fx:id="btnBajasIndividual" layoutX="177.0" layoutY="262.0" mnemonicParsing="false" onAction="#BajasIndividual" prefHeight="30.0" prefWidth="60.0" text="Bajas" />
+            <Button fx:id="btnAltasIndividual" layoutX="110.0" layoutY="262.0" mnemonicParsing="false" onAction="#AltasIndividual" prefHeight="30.0" prefWidth="60.0" text="Altas" />
+            <Label layoutX="25.0" layoutY="58.0" prefHeight="27.0" prefWidth="96.0" text="Individual:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>   
+          </children>
+      </Pane>
+      <Pane fx:id="PaneReporteClientes" layoutX="3.0" layoutY="25.0" prefHeight="390.0" prefWidth="719.0" visible="false">
+         <children>
+            <Label layoutX="279.0" layoutY="207.0" text="CLIENTES EMPRESA">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="255.0" layoutY="14.0" text="CLIENTES INDIVIDUALES">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ListView fx:id="LIstViewIndividual" layoutX="70.0" layoutY="41.0" prefHeight="131.0" prefWidth="584.0" />
+            <ListView fx:id="LIstViewEmpresa" layoutX="68.0" layoutY="238.0" prefHeight="131.0" prefWidth="584.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="PaneRegistroProducto" layoutX="-1.0" layoutY="36.0" prefHeight="177.0" prefWidth="719.0" visible="false">
+         <children>
+            <Label layoutX="66.0" layoutY="36.0" prefHeight="27.0" prefWidth="96.0" text="Producto:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnAltasProducto" layoutX="407.0" layoutY="87.0" mnemonicParsing="false" onAction="#AltasProducto" prefHeight="30.0" prefWidth="60.0" text="Altas" />
+            <Button fx:id="btnBajasProducto" layoutX="506.0" layoutY="87.0" mnemonicParsing="false" onAction="#BajasProducto" prefHeight="30.0" prefWidth="60.0" text="Bajas" />
+            <Button fx:id="btnCambioProducto" layoutX="604.0" layoutY="87.0" mnemonicParsing="false" onAction="#CambioProducto" prefHeight="30.0" prefWidth="60.0" text="Cambio" />
+            <TextField fx:id="txtprecio" layoutX="181.0" layoutY="115.0" prefHeight="25.0" prefWidth="192.0" />
+            <TextField fx:id="txtnombreProducto" layoutX="181.0" layoutY="77.0" prefHeight="25.0" prefWidth="192.0" />
+            <Label layoutX="66.0" layoutY="118.0" text="Precio:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="80.0" text="Nombre:">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label layoutX="66.0" layoutY="1.0" prefHeight="27.0" prefWidth="313.0" text="Ingrese los Siguientes Datos:">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      <Pane fx:id="PaneInventarioProducto" layoutY="36.0" prefHeight="201.0" prefWidth="725.0" visible="false">
+         <children>
+            <Label layoutX="254.0" layoutY="-1.0" text="Inventario de Productos">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ListView fx:id="LIstViewproducto" layoutX="84.0" layoutY="26.0" prefHeight="149.0" prefWidth="558.0" />
+         </children>
+      </Pane>
+      <Pane fx:id="PaneComprar" layoutX="3.0" layoutY="230.0" prefHeight="185.0" prefWidth="719.0" visible="false">
+         <children>
+            <Label layoutX="14.0" layoutY="14.0" text="Compras:">
+               <font>
+                  <Font size="19.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="48.0" text="Ingrese el Id del Cliente:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="14.0" layoutY="93.0" text="Ingrese el Id de los productos a comprar:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtIdCli" layoutX="194.0" layoutY="48.0" prefHeight="25.0" prefWidth="96.0" />
+            <TextField fx:id="txtIdPro" layoutX="315.0" layoutY="93.0" prefHeight="25.0" prefWidth="88.0" />
+            <Label layoutX="14.0" layoutY="139.0" text="Precio de Envio:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="452.0" layoutY="139.0" text="Dias de Envio:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <Label layoutX="240.0" layoutY="139.0" text="Tipo de Envio:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtPrecioEnvio" layoutX="135.0" layoutY="139.0" prefHeight="25.0" prefWidth="96.0" />
+            <TextField fx:id="txtTipoEnvio" layoutX="346.0" layoutY="139.0" prefHeight="25.0" prefWidth="96.0" />
+            <TextField fx:id="txtDiasEnvio" layoutX="560.0" layoutY="139.0" prefHeight="25.0" prefWidth="96.0" />
+            <Label layoutX="420.0" layoutY="94.0" text="Cantidad:">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txtCantidad" layoutX="493.0" layoutY="94.0" prefHeight="25.0" prefWidth="67.0" />
+            <Button fx:id="ButtonComprar" layoutX="603.0" layoutY="13.0" mnemonicParsing="false" onAction="#CrearComprar" text="Crear Compra">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+            <Button fx:id="ButtonBuscar" layoutX="315.0" layoutY="46.0" mnemonicParsing="false" onAction="#Buscar" text="Buscar">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </Pane>
+      <Pane fx:id="PaneOrdenes" layoutX="-1.0" layoutY="25.0" prefHeight="390.0" prefWidth="725.0" visible="false">
+         <children>
+            <ListView fx:id="ListViewCompras" layoutX="36.0" layoutY="41.0" prefHeight="335.0" prefWidth="507.0" />
+            <Button fx:id="buttonEliminar" layoutX="550.0" layoutY="196.0" mnemonicParsing="false" onAction="#EliminarCompra" prefHeight="25.0" prefWidth="161.0" text="Eliminar" />
+            <Label layoutX="36.0" layoutY="9.0" text="Ordenes de Compra Realizadas:">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
+      
+      
+   </children>
+</AnchorPane>
